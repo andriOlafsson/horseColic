@@ -1,0 +1,93 @@
+=== Run information ===
+
+Scheme:       weka.classifiers.trees.J48 -C 0.25 -M 2
+Relation:     test
+Instances:    276
+Attributes:   13
+              surgery
+              capillary_refill_time
+              pain
+              peristalsis
+              abdominal_distention
+              surgical_lesion
+              rectal_temp_bin
+              pulse_bin
+              extremeties
+              mucous
+              packedCell
+              proteinLevel
+              death
+Test mode:    10-fold cross-validation
+
+=== Classifier model (full training set) ===
+
+J48 pruned tree
+------------------
+
+capillary_refill_time = True
+|   extremeties = True: True (52.0/12.0)
+|   extremeties = False
+|   |   peristalsis = True: False (15.0/4.0)
+|   |   peristalsis = False
+|   |   |   surgery = False: True (3.0)
+|   |   |   surgery = True: False (3.0/1.0)
+capillary_refill_time = False
+|   surgical_lesion = False
+|   |   surgery = False: False (68.0/2.0)
+|   |   surgery = True
+|   |   |   mucous = False
+|   |   |   |   peristalsis = True: False (6.0)
+|   |   |   |   peristalsis = False
+|   |   |   |   |   pulse_bin = True: False (2.0)
+|   |   |   |   |   pulse_bin = False: True (4.0/1.0)
+|   |   |   mucous = True: True (6.0)
+|   surgical_lesion = True
+|   |   proteinLevel = True
+|   |   |   peristalsis = True: False (38.0/8.0)
+|   |   |   peristalsis = False
+|   |   |   |   rectal_temp_bin = True: False (2.0)
+|   |   |   |   rectal_temp_bin = False: True (7.0/2.0)
+|   |   proteinLevel = False
+|   |   |   surgery = False: True (13.0/1.0)
+|   |   |   surgery = True
+|   |   |   |   mucous = False: False (28.0/9.0)
+|   |   |   |   mucous = True
+|   |   |   |   |   pain = True
+|   |   |   |   |   |   rectal_temp_bin = True
+|   |   |   |   |   |   |   pulse_bin = True: True (2.0)
+|   |   |   |   |   |   |   pulse_bin = False: False (3.0)
+|   |   |   |   |   |   rectal_temp_bin = False: True (22.0/8.0)
+|   |   |   |   |   pain = False: False (2.0)
+
+Number of Leaves  : 	18
+
+Size of the tree : 	35
+
+
+Time taken to build model: 0 seconds
+
+=== Stratified cross-validation ===
+=== Summary ===
+
+Correctly Classified Instances         206               74.6377 %
+Incorrectly Classified Instances        70               25.3623 %
+Kappa statistic                          0.459 
+Mean absolute error                      0.3165
+Root mean squared error                  0.4393
+Relative absolute error                 66.2062 %
+Root relative squared error             89.8692 %
+Total Number of Instances              276     
+
+=== Detailed Accuracy By Class ===
+
+                 TP Rate  FP Rate  Precision  Recall   F-Measure  MCC      ROC Area  PRC Area  Class
+                 0.624    0.174    0.701      0.624    0.660      0.461    0.766     0.636     True
+                 0.826    0.376    0.771      0.826    0.798      0.461    0.766     0.796     False
+Weighted Avg.    0.746    0.296    0.743      0.746    0.743      0.461    0.766     0.733     
+
+=== Confusion Matrix ===
+
+   a   b   <-- classified as
+  68  41 |   a = True
+  29 138 |   b = False
+

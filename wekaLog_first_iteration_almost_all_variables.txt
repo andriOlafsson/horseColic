@@ -1,0 +1,8 @@
+11:36:01: Weka Explorer
+11:36:01: (c) 1999-2019 The University of Waikato, Hamilton, New Zealand
+11:36:01: web: http://www.cs.waikato.ac.nz/~ml/weka/
+11:36:01: Started on Tuesday, 22 September 2020
+11:36:30: Base relation is now test (276 instances)
+11:36:46: Started weka.classifiers.trees.J48
+11:36:46: Command: weka.classifiers.trees.J48 -C 0.25 -M 2
+11:36:46: Finished weka.classifiers.trees.J48
